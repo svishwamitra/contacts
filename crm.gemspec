@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency "bootstrap-will_paginate"
   s.add_dependency "simple_form"
 
-  s.add_development_dependency "pg"
+  #s.add_development_dependency "pg"
 end
