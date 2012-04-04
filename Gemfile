@@ -11,7 +11,7 @@ gem "sqlite3"
 gem "will_paginate"
 gem 'bootstrap-will_paginate' 
 gem 'simple_form'
-gem 'sortable3', :git => "http://github.com/svishwamitra/sortable3.git"
+gem 'sortable', :git => "http://github.com/svishwamitra/sortable3.git"
 gem 'addressable', :git => "http://github.com/svishwamitra/addressable.git"
 
 # Declare any dependencies that are still in development here instead of in
