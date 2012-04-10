@@ -9,13 +9,12 @@ module Crm
       Contact.searchable_columns :contact_name => ["crm_contacts.name", "Name"], :contact_email => ["crm_contacts.email", "Email"], :contact_phone => ["crm_contacts.phone", "Phone"], :contact_account_id => ["company_accounts.name", "Account"]
     end
 
-
     # GET /contacts
     # GET /contacts.json
     def index
       @contacts = Contact.conditional_pagesort(params, {:includes => [:accounts]})
-      @accounts = Company::Account.where("name #{like} ?", "%#{params[:q]}%")
-      
+      @accounts = Company::Account.where("name #{like} ?", "%#{params[:q]}%") 
+      #rescue
       respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @accounts.map(&:attributes)}
@@ -51,8 +50,8 @@ module Crm
     def create
       @contact = Contact.new(:name => params[:contact][:name],
                              :email => params[:contact][:email],
-                              :phone => params[:contact][:phone],
-                              :account_tokens => params[:contact][:account_tokens])
+                             :phone => params[:contact][:phone],
+                             :account_tokens => params[:contact][:account_tokens])
       @contact.addresses.build(params[:contact][:addresses_attributes]["0"])
 #      @contact = Contact.new(params[:contact])
 #      @contact.addresses.build
@@ -114,5 +113,15 @@ private
       puts "#{page_cache_directory}/crm/contacts"
       puts "--------------------------------------------"
     end
+    
+    def like  
+      if ActiveRecord::Base.connection.adapter_name.downcase == 'postgresql'
+        'ilike'
+      else
+        'like'
+      end
+    end
+
+    
   end
 end

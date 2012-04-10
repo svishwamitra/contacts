@@ -13,6 +13,7 @@ gem 'bootstrap-will_paginate'
 gem 'simple_form'
 gem 'sortable', :git => "http://github.com/svishwamitra/sortable3.git"
 gem 'addressable', :git => "http://github.com/svishwamitra/addressable.git"
+gem 'company', :git => "http://github.com/svishwamitra/accounts.git"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
