@@ -12,7 +12,7 @@ module Crm
     # GET /contacts
     # GET /contacts.json
     def index
-      @contacts = Contact.conditional_pagesort(params, {:includes => [:accounts]})
+      @contacts = Contact.conditional_pagesort(params)
       @accounts = Company::Account.where("name #{like} ?", "%#{params[:q]}%") 
       #rescue
       respond_to do |format|
