@@ -1,6 +1,6 @@
 GIT
   remote: http://github.com/svishwamitra/accounts.git
-  revision: 6e5190b77c23ae9392295709d3575e189362eb6c
+  revision: e0c03df4fb15c22bde31db9018470c23656c0359
   specs:
     company (0.0.1)
       rails (~> 3.2.2)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: http://github.com/svishwamitra/sortable3.git
-  revision: 53944534540d3f3dd64e964e25ee4bf21b70d935
+  revision: cefd8afca51d01cb276dc19af123f428bd68691c
   specs:
     sortable (0.0.1.alpha)
 
@@ -23,9 +23,7 @@ PATH
   remote: .
   specs:
     crm (0.0.1)
-      addressable
       bootstrap-will_paginate
-      company
       jquery-rails
       rails (~> 3.2.2)
       simple_form
