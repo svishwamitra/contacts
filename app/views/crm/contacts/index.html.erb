@@ -12,7 +12,13 @@ function show(id)
 <h1>Portal Contacts</h1>
 <div style="float:right"><%= link_to 'New Contact', new_contact_path, :class => 'btn btn-primary' %></div>
 <%= sortable_alphabet %>
-<table class="table table-striped">
+<strong><script src="http://d3pr5r64n04s3o.cloudfront.net/tuts/195_bootstrap/tut/path/to/tablesorter/jquery.tablesorter.min.js"></script>
+<script>
+  $(function() {
+    $("table#sortTableExample").tablesorter({ sortList: [[1,0]] });
+  });
+</script></strong>
+<table class="table table-striped zebra-striped" id="sortTableExample">
 <%= sortable_filter %>
 <% @contacts.each do |contact| %>
   <tr>
